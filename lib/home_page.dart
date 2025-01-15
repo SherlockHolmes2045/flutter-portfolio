@@ -5,6 +5,7 @@ import 'package:portfolio/colors.dart';
 import 'package:portfolio/github_button.dart';
 import 'package:portfolio/semi_circle.dart';
 import 'package:portfolio/social_network_widget.dart';
+import 'package:portfolio/work_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -456,6 +457,42 @@ class _HomePageState extends State<HomePage> {
                         Divider(
                           color: grey,
                           thickness: 0.5,
+                        ),
+                        WorkItem(),
+                        Divider(
+                          color: grey,
+                          thickness: 0.5,
+                        ),
+                        WorkItem(),
+                        Divider(
+                          color: grey,
+                          thickness: 0.5,
+                        ),
+                        WorkItem(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  'Work experience',
+                                  style: TextStyle(
+                                      fontFamily: 'OpenSans', color: grey),
+                                ),
+                                Text(
+                                  '4 years 9 months',
+                                  style: TextStyle(
+                                      fontFamily: 'OpenSans', color: white),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
                         )
                       ],
                     ),
