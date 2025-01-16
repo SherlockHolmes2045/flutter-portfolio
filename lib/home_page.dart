@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/articles_section_widget.dart';
 import 'package:portfolio/colors.dart';
 import 'package:portfolio/github_button.dart';
+import 'package:portfolio/menu_item.dart';
 import 'package:portfolio/semi_circle.dart';
 import 'package:portfolio/social_network_widget.dart';
 import 'package:portfolio/work_item.dart';
@@ -54,22 +55,10 @@ class _HomePageState extends State<HomePage> {
                             Row(
                               spacing: 20,
                               children: [
-                                Text(
-                                  'About',
-                                  style: TextStyle(fontFamily: 'OpenSans'),
-                                ),
-                                Text(
-                                  'Projects',
-                                  style: TextStyle(fontFamily: 'OpenSans'),
-                                ),
-                                Text(
-                                  'Articles',
-                                  style: TextStyle(fontFamily: 'OpenSans'),
-                                ),
-                                Text(
-                                  'Contacts',
-                                  style: TextStyle(fontFamily: 'OpenSans'),
-                                ),
+                                MenuItem(text: 'About'),
+                                MenuItem(text: 'Projects'),
+                                MenuItem(text: 'Articles'),
+                                MenuItem(text: 'Contacts'),
                               ],
                             ),
                             Column(
