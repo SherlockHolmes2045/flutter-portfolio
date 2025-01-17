@@ -18,6 +18,7 @@ class _WorkItemState extends State<WorkItem> {
       onEnter: (_) => setState(() => isHovered = true),
       onExit: (_) => setState(() => isHovered = false),
       child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 32),
         onTap: () {},
         focusColor: white,
         hoverColor: white,

@@ -10,18 +10,25 @@ class SocialNetworkWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 7, horizontal: 15),
-      decoration: BoxDecoration(
-          border: Border.all(width: 0.25, color: grey),
-          borderRadius: BorderRadius.circular(20)),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        backgroundColor: black,
+        overlayColor: white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        side: BorderSide(
+          width: 0.5,
+          color: grey,
+        ),
+      ),
+      onPressed: () {},
       child: Row(
         spacing: 5,
         children: [
           icon,
           Text(text,
               style: TextStyle(
-                  fontSize: 9,
+                  fontSize: 11,
                   color: Colors.grey,
                   fontFamily: 'OpenSans',
                   fontStyle: FontStyle.italic))
