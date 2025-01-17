@@ -1,0 +1,11 @@
+{
+  "@@locale": "fr",
+  "counterAppBarTitle": "Compteur",
+  "@counterAppBarTitle": {
+    "description": "Texte montré dans l'appbar de la page compteur"
+  },
+  "about": "A propos",
+  "@about": {
+    "description": "Menu item"
+  }
+}
