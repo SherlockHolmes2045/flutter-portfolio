@@ -5,8 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/articles_section_widget.dart';
 import 'package:portfolio/colors.dart';
 import 'package:portfolio/l10n/l10n.dart';
+import 'package:portfolio/l10n/menu_widget.dart';
 import 'package:portfolio/language_widget.dart';
-import 'package:portfolio/menu_item.dart';
 import 'package:portfolio/semi_circle.dart';
 import 'package:portfolio/social_network_widget.dart';
 import 'package:portfolio/technical_stack_section.dart';
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Column(
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(left: 32, right: 32, top: 12),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,15 +59,7 @@ class _HomePageState extends State<HomePage> {
                             'Ivan\nLemovou',
                             style: TextStyle(fontFamily: 'OpenSans'),
                           ),
-                          Row(
-                            spacing: 20,
-                            children: [
-                              MenuItem(text: l10n.about),
-                              MenuItem(text: 'Projects'),
-                              MenuItem(text: 'Articles'),
-                              MenuItem(text: 'Contacts'),
-                            ],
-                          ),
+                          MenuWidget(),
                           LanguageWidget(),
                         ],
                       ),
@@ -236,7 +228,7 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Hello! I\'m Ivan a fullstack developer.',
+                                  "Hello! I'm Ivan a fullstack developer.",
                                   style: TextStyle(
                                     fontFamily: 'OpenSans',
                                     fontSize: 14,

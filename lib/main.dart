@@ -3,6 +3,7 @@ import 'package:portfolio/colors.dart';
 import 'package:portfolio/global_variables.dart';
 import 'package:portfolio/home_page.dart';
 import 'package:portfolio/l10n/l10n.dart';
+import 'package:portfolio/project_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,7 +51,11 @@ class MyApp extends StatelessWidget {
           locale: languageModel.appLocale,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          home: const HomePage(),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => const HomePage(),
+            '/projects': (context) => const ProjectPage(),
+          },
         );
       },
     );
