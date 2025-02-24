@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'colors.dart';
+import 'package:portfolio/colors.dart';
 
 class ArticlesSectionWidget extends StatefulWidget {
   const ArticlesSectionWidget({super.key});
