@@ -30,8 +30,8 @@ class GithubButton extends StatelessWidget {
             child: Container(
               height: 50,
               width: 50,
-              decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: Colors.white),
               child: Center(
                 child: Transform.rotate(
                   angle: -pi / 4,
