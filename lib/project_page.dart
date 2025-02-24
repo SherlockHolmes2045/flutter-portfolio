@@ -12,6 +12,20 @@ class ProjectPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: black,
       body: Center(
+        child: ClipPath(
+          clipper: CustomContainerClipper(),
+          child: Container(
+            color: Colors.white,
+            width: 500,
+            height: 300,
+            child: Center(),
+          ),
+        ),
+      ),
+    );
+    /*return Scaffold(
+      backgroundColor: black,
+      body: Center(
         child: SingleChildScrollView(
           child: Container(
             width: 1000,
@@ -146,6 +160,6 @@ class ProjectPage extends StatelessWidget {
           ),
         ),
       ),
-    );
+    );*/
   }
 }
