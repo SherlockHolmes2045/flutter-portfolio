@@ -22,15 +22,15 @@ class CustomContainerClipper extends CustomClipper<Path> {
         radius: const Radius.circular(radius),
         clockwise: false,
       )
-      ..lineTo(size.width / 1.35, size.height - radius)
+      ..lineTo(size.width / 1.35, size.height / 1.2 - radius)
       ..quadraticBezierTo(
         size.width / 1.35,
-        size.height,
+        size.height / 1.2,
         size.width / 1.35 - radius,
-        size.height,
+        size.height / 1.2,
       )
-      ..lineTo(radius, size.height)
-      ..quadraticBezierTo(0, size.height, 0, size.height - radius)
+      ..lineTo(radius, size.height / 1.2)
+      ..quadraticBezierTo(0, size.height / 1.2, 0, size.height / 1.2 - radius)
       ..lineTo(0, size.height / 3 + radius)
       // Fix for the middle left corner
       ..quadraticBezierTo(
