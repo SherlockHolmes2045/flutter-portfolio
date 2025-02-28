@@ -3,22 +3,24 @@ import 'package:portfolio/colors.dart';
 import 'package:portfolio/custom_clipper.dart';
 import 'package:portfolio/github_button.dart';
 import 'package:portfolio/header_widget.dart';
+import 'package:portfolio/l10n/l10n.dart';
 
 class ProjectPage extends StatelessWidget {
   const ProjectPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
-      backgroundColor: black,
+      backgroundColor: Colors.black,
       body: Center(
         child: ClipPath(
-          clipper: CustomContainerClipper(),
+          clipper: const CustomContainerClipper(1),
           child: Container(
             color: Colors.white,
-            width: 500,
+            width: 550,
             height: 300,
-            child: Center(),
+            child: const Center(),
           ),
         ),
       ),
@@ -46,9 +48,10 @@ class ProjectPage extends StatelessWidget {
                     const SizedBox(
                       height: 100,
                     ),
-                    const Text(
-                      '... /Projects ...',
-                      style: TextStyle(fontFamily: 'OpenSans', fontSize: 20),
+                    Text(
+                      '... /${l10n.project} ...',
+                      style:
+                          const TextStyle(fontFamily: 'OpenSans', fontSize: 20),
                     ),
                     const SizedBox(
                       height: 60,
@@ -141,15 +144,14 @@ class ProjectPage extends StatelessWidget {
                             ],
                           ),
                           ClipPath(
-                            clipper: CustomContainerClipper(),
+                            clipper: const CustomContainerClipper(1),
                             child: Container(
-
                               color: Colors.white,
-                              width: 300,
-                              height: 200,
-                              child: Center(),
+                              width: 550,
+                              height: 300,
+                              child: const Center(),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),

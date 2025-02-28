@@ -7,5 +7,9 @@
   "about": "A propos",
   "@about": {
     "description": "Menu item"
+  },
+  "project": "Projets",
+  "@project": {
+    "description": "Project label"
   }
 }
