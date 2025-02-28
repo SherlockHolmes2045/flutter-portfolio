@@ -16,7 +16,7 @@ class ProjectPage extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            width: 1000,
+            width: 1100,
             decoration: BoxDecoration(
               border: Border.all(
                 color: white,
@@ -46,7 +46,7 @@ class ProjectPage extends StatelessWidget {
                       padding:
                           const EdgeInsets.only(left: 32, right: 32, top: 12),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,13 +129,58 @@ class ProjectPage extends StatelessWidget {
                               const SizedBox(width: 150, child: GithubButton()),
                             ],
                           ),
-                          ClipPath(
-                            clipper: const CustomContainerClipper(1),
-                            child: Container(
+                          Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: ClipPath(
+                                      clipper: const CustomContainerClipper(1),
+                                      child: Container(
+                                        color: Colors.white,
+                                        width: 500,
+                                        height: 300,
+                                        child: const Center(),
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    right: 10, // Distance from the right edge
+                                    bottom: 0, // Distance from the bottom edge
+                                    child: Container(
+                                      width: 150,
+                                      height: 150,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            width: 150,
+                            height: 300,
+                            decoration: BoxDecoration(
                               color: Colors.white,
-                              width: 550,
-                              height: 300,
-                              child: const Center(),
+                              borderRadius: BorderRadius.circular(20),
                             ),
                           ),
                         ],
