@@ -30,17 +30,17 @@ class CustomContainerClipper extends CustomClipper<Path> {
         size.width - radius,
         size.height / 2.5,
       )
-      ..lineTo(size.width / 1.3, size.height / 2.5)
+      ..lineTo(size.width / 1.5, size.height / 2.5)
       ..arcToPoint(
-        Offset(size.width / 1.35, size.height / 2.15),
+        Offset(size.width / 1.55, size.height / 2.15),
         radius: Radius.circular(radius),
         clockwise: false,
       )
-      ..lineTo(size.width / 1.35, size.height - radius)
+      ..lineTo(size.width / 1.55, size.height - radius)
       ..quadraticBezierTo(
-        size.width / 1.35,
+        size.width / 1.55,
         size.height,
-        size.width / 1.35 - radius,
+        size.width / 1.55 - radius,
         size.height,
       )
       ..lineTo(radius, size.height)
