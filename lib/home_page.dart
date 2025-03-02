@@ -6,7 +6,6 @@ import 'package:portfolio/articles_section_widget.dart';
 import 'package:portfolio/colors.dart';
 import 'package:portfolio/header_widget.dart';
 import 'package:portfolio/l10n/l10n.dart';
-import 'package:portfolio/l10n/menu_widget.dart';
 import 'package:portfolio/semi_circle.dart';
 import 'package:portfolio/social_network_widget.dart';
 import 'package:portfolio/technical_stack_section.dart';

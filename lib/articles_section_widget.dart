@@ -48,74 +48,85 @@ class _ArticlesSectionWidgetState extends State<ArticlesSectionWidget> {
                         width: 300,
                         height: 180,
                         decoration: BoxDecoration(
-                            color: darkGrey.withOpacity(0.95),
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(20),
-                                bottomRight: Radius.circular(20))),
+                          color: darkGrey.withOpacity(0.95),
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                          ),
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.only(
-                              left: 16, right: 8.0, top: 8.0, bottom: 8.0),
+                            left: 16,
+                            right: 8,
+                            top: 8,
+                            bottom: 8,
+                          ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 'The simple example is \nkafka + golang',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'OpenSans'),
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'OpenSans',
+                                ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               Text(
                                 'This article presents a simple way to implement a micro service architecture using Kafka, Golang and Docker.',
                                 style: TextStyle(
-                                    color: grey,
-                                    fontSize: 8,
-                                    fontFamily: 'OpenSans'),
+                                  color: grey,
+                                  fontSize: 8,
+                                  fontFamily: 'OpenSans',
+                                ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 25, vertical: 7),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 25,
+                                      vertical: 7,
+                                    ),
                                     decoration: BoxDecoration(
-                                        color: white,
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
+                                      color: white,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
                                     child: Text(
                                       'Read more',
                                       style: TextStyle(
-                                          color: black,
-                                          fontSize: 11,
-                                          fontFamily: 'OpenSans',
-                                          fontWeight: FontWeight.bold,
-                                          letterSpacing: -0.5,
-                                          fontStyle: FontStyle.italic),
+                                        color: black,
+                                        fontSize: 11,
+                                        fontFamily: 'OpenSans',
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: -0.5,
+                                        fontStyle: FontStyle.italic,
+                                      ),
                                     ),
                                   ),
                                   ElevatedButton(
-                                      onPressed: () {},
-                                      style: ElevatedButton.styleFrom(
-                                        shape: CircleBorder(),
-                                      ),
-                                      child: Icon(
-                                        Icons.arrow_forward,
-                                        color: black,
-                                      ))
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      shape: const CircleBorder(),
+                                    ),
+                                    child: Icon(
+                                      Icons.arrow_forward,
+                                      color: black,
+                                    ),
+                                  ),
                                 ],
-                              )
+                              ),
                             ],
                           ),
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             );
@@ -250,39 +261,46 @@ class _ArticlesSectionWidgetState extends State<ArticlesSectionWidget> {
                 height: 70,
                 width: 70,
                 child: ElevatedButton(
-                    onPressed: () =>
-                        null /*buttonCarouselController.previousPage()*/,
-                    style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(
-                            side: BorderSide(color: grey, width: 0.75)),
-                        backgroundColor: Colors.transparent),
-                    child: Center(
-                        child: FaIcon(
+                  onPressed: () =>
+                      null /*buttonCarouselController.previousPage()*/,
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(
+                      side: BorderSide(color: grey, width: 0.75),
+                    ),
+                    backgroundColor: Colors.transparent,
+                  ),
+                  child: Center(
+                    child: FaIcon(
                       FontAwesomeIcons.arrowLeftLong,
                       color: white,
                       size: 18,
-                    ))),
+                    ),
+                  ),
+                ),
               ),
               SizedBox(
                 height: 70,
                 width: 70,
                 child: ElevatedButton(
-                    onPressed: () =>
-                        null /*buttonCarouselController.nextPage()*/,
-                    style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(
-                            side: BorderSide(color: grey, width: 0.75)),
-                        backgroundColor: Colors.transparent),
-                    child: Center(
-                        child: FaIcon(
+                  onPressed: () => null /*buttonCarouselController.nextPage()*/,
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(
+                      side: BorderSide(color: grey, width: 0.75),
+                    ),
+                    backgroundColor: Colors.transparent,
+                  ),
+                  child: Center(
+                    child: FaIcon(
                       FontAwesomeIcons.arrowRightLong,
                       color: white,
                       size: 18,
-                    ))),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

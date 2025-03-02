@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/colors.dart';
 
 class SocialNetworkWidget extends StatelessWidget {
-  const SocialNetworkWidget(
-      {super.key, required this.icon, required this.text});
+  const SocialNetworkWidget({
+    required this.icon,
+    required this.text,
+    super.key,
+  });
 
   final Widget icon;
   final String text;
@@ -12,7 +15,7 @@ class SocialNetworkWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         backgroundColor: black,
         overlayColor: white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -26,12 +29,15 @@ class SocialNetworkWidget extends StatelessWidget {
         spacing: 5,
         children: [
           icon,
-          Text(text,
-              style: TextStyle(
-                  fontSize: 11,
-                  color: Colors.grey,
-                  fontFamily: 'OpenSans',
-                  fontStyle: FontStyle.italic))
+          Text(
+            text,
+            style: const TextStyle(
+              fontSize: 11,
+              color: Colors.grey,
+              fontFamily: 'OpenSans',
+              fontStyle: FontStyle.italic,
+            ),
+          ),
         ],
       ),
     );
