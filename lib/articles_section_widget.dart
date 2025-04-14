@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:portfolio/colors.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class ArticlesSectionWidget extends StatefulWidget {
   const ArticlesSectionWidget({super.key});
@@ -134,9 +135,8 @@ class _ArticlesSectionWidgetState extends State<ArticlesSectionWidget> {
           options: CarouselOptions(
             height: 400,
             enlargeCenterPage: true,
-            viewportFraction: 0.8,
-            enableInfiniteScroll: true,
-            enlargeStrategy: CenterPageEnlargeStrategy.scale,
+            viewportFraction:
+                ResponsiveBreakpoints.of(context).isDesktop ? 0.8 : 1,
           ),
         ),
         // FlutterCarousel.builder(

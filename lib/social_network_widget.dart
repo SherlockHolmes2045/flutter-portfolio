@@ -26,6 +26,7 @@ class SocialNetworkWidget extends StatelessWidget {
       ),
       onPressed: () {},
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         spacing: 5,
         children: [
           icon,
