@@ -6,6 +6,7 @@ import 'package:portfolio/articles_section_widget.dart';
 import 'package:portfolio/colors.dart';
 import 'package:portfolio/header_widget.dart';
 import 'package:portfolio/headline_social_widget.dart';
+import 'package:portfolio/home_about_section.dart';
 import 'package:portfolio/l10n/l10n.dart';
 import 'package:portfolio/headline_widget.dart';
 import 'package:portfolio/semi_circle.dart';
@@ -53,6 +54,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Padding(
                       padding: EdgeInsets.only(left: 32, right: 32, top: 12),
@@ -79,68 +81,57 @@ class _HomePageState extends State<HomePage> {
                       padding: EdgeInsets.symmetric(horizontal: 32),
                       child: ArticlesSectionWidget(),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 32),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            '... /About me ...',
-                            style:
-                                TextStyle(fontFamily: 'OpenSans', fontSize: 10),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 80),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Hello! I'm Ivan a fullstack developer.",
-                                  style: TextStyle(
-                                    fontFamily: 'OpenSans',
-                                    fontSize: 14,
-                                    color: grey,
-                                  ),
-                                ),
-                                Text(
-                                  'More than 5 years experience.',
-                                  style: TextStyle(
-                                    fontFamily: 'OpenSans',
-                                    fontSize: 14,
-                                    color: grey,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 32),
+                      child: HomeAboutSection(),
                     ),
                     const SizedBox(
                       height: 70,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 32),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const TechnicalStackSection(),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 16),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                'assets/user/ivan.jpg',
-                                height: 400,
-                                width: 300,
-                                fit: BoxFit.cover,
+                    if (ResponsiveBreakpoints.of(context).isDesktop) ...[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const TechnicalStackSection(),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 16),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  'assets/user/ivan.jpg',
+                                  height: 400,
+                                  width: 300,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
+                    ] else ...[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(
+                            'assets/user/ivan.jpg',
+                            height: 400,
+                            width: 300,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 32),
+                        child: TechnicalStackSection(),
+                      ),
+                    ],
                     const SizedBox(
                       height: 60,
                     ),

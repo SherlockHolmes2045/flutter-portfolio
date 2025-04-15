@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart';
+import 'package:portfolio/colors.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class WorkItem extends StatefulWidget {
   const WorkItem({super.key});
@@ -23,34 +24,62 @@ class _WorkItemState extends State<WorkItem> {
         focusColor: white,
         hoverColor: white,
         leading: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               '2024 -',
               style: TextStyle(
-                  fontFamily: 'OpenSans', color: isHovered ? black : grey),
+                fontFamily: 'OpenSans',
+                color: isHovered ? black : grey,
+              ),
             ),
             Text(
               '1 year',
               style: TextStyle(
-                  fontFamily: 'OpenSans',
-                  fontSize: 10,
-                  color: isHovered ? darkGrey : grey),
-            )
+                fontFamily: 'OpenSans',
+                fontSize: 10,
+                color: isHovered ? darkGrey : grey,
+              ),
+            ),
           ],
         ),
-        title: Center(
-          child: Text(
-            'Groupe Open',
-            style: TextStyle(
-                fontFamily: 'OpenSans', color: isHovered ? black : white),
-          ),
-        ),
-        trailing: Text(
-          'Software Engineer | Java & Angular & Vue',
-          style: TextStyle(color: isHovered ? black : white, fontSize: 16),
-        ),
+        title: ResponsiveBreakpoints.of(context).isDesktop
+            ? Center(
+                child: Text(
+                  'Groupe Open',
+                  style: TextStyle(
+                    fontFamily: 'OpenSans',
+                    color: isHovered ? black : white,
+                  ),
+                ),
+              )
+            : Center(
+                child: Column(
+                  children: [
+                    Text(
+                      'Groupe Open',
+                      style: TextStyle(
+                        fontFamily: 'OpenSans',
+                        color: isHovered ? black : white,
+                      ),
+                    ),
+                    Text(
+                      'Software Engineer | Java & Angular & Vue',
+                      style: TextStyle(
+                        color: isHovered ? black : white,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+        trailing: ResponsiveBreakpoints.of(context).isDesktop
+            ? Text(
+                'Software Engineer | Java & Angular & Vue',
+                style:
+                    TextStyle(color: isHovered ? black : white, fontSize: 16),
+              )
+            : const SizedBox.shrink(),
       ),
     );
   }

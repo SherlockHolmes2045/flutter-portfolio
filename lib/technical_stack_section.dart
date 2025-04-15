@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:portfolio/colors.dart';
 import 'package:portfolio/github_button.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class TechnicalStackSection extends StatelessWidget {
   const TechnicalStackSection({super.key});
@@ -51,43 +52,49 @@ class TechnicalStackSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                width: 250,
-                decoration: BoxDecoration(
-                  color: black,
-                  border: Border.all(color: grey, width: 0.25),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Front-end',
-                      style: TextStyle(
-                        fontFamily: 'OpenSans',
-                        fontSize: 16,
-                        color: grey,
+              Expanded(
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                  width: 250,
+                  decoration: BoxDecoration(
+                    color: black,
+                    border: Border.all(color: grey, width: 0.25),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Front-end',
+                        style: TextStyle(
+                          fontFamily: 'OpenSans',
+                          fontSize: 16,
+                          color: grey,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      'Typescript / Angular / RxJs / Vue / Vuex / Jest / Pupeteer',
-                      style: TextStyle(
-                        fontFamily: 'OpenSans',
-                        fontSize: 12,
-                        color: white.withOpacity(0.8),
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                  ],
+                      Text(
+                        'Typescript / Angular / RxJs / Vue / Vuex / Jest / Pupeteer',
+                        style: TextStyle(
+                          fontFamily: 'OpenSans',
+                          fontSize: 12,
+                          color: white.withOpacity(0.8),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 12, top: 0),
-                child: SizedBox(width: 150, child: GithubButton()),
+              Expanded(
+                child: Padding(
+                  padding: ResponsiveBreakpoints.of(context).isDesktop
+                      ? const EdgeInsets.only(right: 12)
+                      : const EdgeInsets.only(left: 60),
+                  child: const SizedBox(width: 150, child: GithubButton()),
+                ),
               ),
             ],
           ),
@@ -133,47 +140,68 @@ class TechnicalStackSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Some of my favorite technologies,\ntopics or tools,I've worked with",
-                style: TextStyle(
-                  fontFamily: 'OpenSans',
-                  color: grey,
-                  fontSize: 13,
-                  fontStyle: FontStyle.italic,
+              if (ResponsiveBreakpoints.of(context).isDesktop) ...[
+                Text(
+                  "Some of my favorite technologies,\ntopics or tools,I've worked with",
+                  style: TextStyle(
+                    fontFamily: 'OpenSans',
+                    color: grey,
+                    fontSize: 13,
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
-              ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                width: 250,
-                decoration: BoxDecoration(
-                  color: black,
-                  border: Border.all(color: grey, width: 0.25),
-                  borderRadius: BorderRadius.circular(25),
+              ],
+              if (ResponsiveBreakpoints.of(context).isMobile) ...[
+                SizedBox(
+                  width: 100,
+                  child: Text(
+                    "Some of my favorite technologies,\ntopics or tools,I've worked with",
+                    style: TextStyle(
+                      fontFamily: 'OpenSans',
+                      color: grey,
+                      fontSize: 13,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'DevOps',
-                      style: TextStyle(
-                        fontFamily: 'OpenSans',
-                        fontSize: 16,
-                        color: grey,
+                const SizedBox(
+                  width: 30,
+                ),
+              ],
+              Expanded(
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                  width: 250,
+                  decoration: BoxDecoration(
+                    color: black,
+                    border: Border.all(color: grey, width: 0.25),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'DevOps',
+                        style: TextStyle(
+                          fontFamily: 'OpenSans',
+                          fontSize: 16,
+                          color: grey,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      'Nginx / Apache / Docker / (CI/CD) / k8s / Jenkins / Bash',
-                      style: TextStyle(
-                        fontFamily: 'OpenSans',
-                        fontSize: 12,
-                        color: white.withOpacity(0.8),
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                  ],
+                      Text(
+                        'Nginx / Apache / Docker / (CI/CD) / k8s / Jenkins / Bash',
+                        style: TextStyle(
+                          fontFamily: 'OpenSans',
+                          fontSize: 12,
+                          color: white.withOpacity(0.8),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
