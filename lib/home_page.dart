@@ -1,16 +1,15 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/articles_section_widget.dart';
 import 'package:portfolio/colors.dart';
 import 'package:portfolio/header_widget.dart';
 import 'package:portfolio/headline_social_widget.dart';
+import 'package:portfolio/headline_widget.dart';
 import 'package:portfolio/home_about_section.dart';
 import 'package:portfolio/l10n/l10n.dart';
-import 'package:portfolio/headline_widget.dart';
+import 'package:portfolio/navbar_drawer.dart';
 import 'package:portfolio/semi_circle.dart';
-import 'package:portfolio/social_network_widget.dart';
 import 'package:portfolio/technical_stack_section.dart';
 import 'package:portfolio/work_item.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -28,6 +27,7 @@ class _HomePageState extends State<HomePage> {
     final l10n = context.l10n;
     return Scaffold(
       backgroundColor: black,
+      endDrawer: const NavbarDrawer(),
       body: Center(
         child: SingleChildScrollView(
           child: Container(

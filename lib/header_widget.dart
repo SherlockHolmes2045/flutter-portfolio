@@ -23,11 +23,13 @@ class HeaderWidget extends StatelessWidget {
           Transform.translate(
             offset: const Offset(16, 0),
             child: IconButton(
-              icon: const Icon(
-                Icons.menu,
+              icon: Icon(
+                Scaffold.of(context).isEndDrawerOpen ? Icons.close : Icons.menu,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () => Scaffold.of(context).isEndDrawerOpen
+                  ? Scaffold.of(context).closeEndDrawer()
+                  : Scaffold.of(context).openEndDrawer(),
             ),
           )
         ]
