@@ -99,7 +99,7 @@ class MyApp extends StatelessWidget {
             path != '/' && path.startsWith('/') ? path.substring(1) : path;
         return switch (pathName) {
           '/' => const HomePage(),
-          '/projects' => const ResponsiveBreakpoints(
+          'projects' => const ResponsiveBreakpoints(
               breakpoints: [
                 Breakpoint(start: 0, end: 480, name: MOBILE),
                 Breakpoint(start: 481, end: 1200, name: TABLET),
