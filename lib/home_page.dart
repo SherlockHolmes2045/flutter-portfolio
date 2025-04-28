@@ -11,7 +11,7 @@ import 'package:portfolio/l10n/l10n.dart';
 import 'package:portfolio/navbar_drawer.dart';
 import 'package:portfolio/semi_circle.dart';
 import 'package:portfolio/technical_stack_section.dart';
-import 'package:portfolio/work_item.dart';
+import 'package:portfolio/work_section.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class HomePage extends StatefulWidget {
@@ -114,13 +114,15 @@ class _HomePageState extends State<HomePage> {
                     ] else ...[
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 32),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.asset(
-                            'assets/user/ivan.jpg',
-                            height: 400,
-                            width: 300,
-                            fit: BoxFit.cover,
+                        child: Center(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              'assets/user/ivan.jpg',
+                              height: 400,
+                              width: 300,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -135,75 +137,9 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 60,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 32),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            'Work',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineLarge
-                                ?.copyWith(
-                                  fontSize: 70,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 3,
-                                ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Divider(
-                      color: grey,
-                      thickness: 0.5,
-                    ),
-                    const WorkItem(),
-                    Divider(
-                      color: grey,
-                      thickness: 0.5,
-                    ),
-                    const WorkItem(),
-                    Divider(
-                      color: grey,
-                      thickness: 0.5,
-                    ),
-                    const WorkItem(),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 32),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Column(
-                            children: [
-                              Text(
-                                'Work experience',
-                                style: TextStyle(
-                                  fontFamily: 'OpenSans',
-                                  color: grey,
-                                ),
-                              ),
-                              Text(
-                                '4 years 9 months',
-                                style: TextStyle(
-                                  fontFamily: 'OpenSans',
-                                  color: white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
+                    if (ResponsiveBreakpoints.of(context).isDesktop) ...[
+                      const WorkSection(),
+                    ],
                   ],
                 ),
               ],

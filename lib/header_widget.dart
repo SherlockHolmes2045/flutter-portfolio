@@ -15,7 +15,8 @@ class HeaderWidget extends StatelessWidget {
           'Ivan\nLemovou',
           style: TextStyle(fontFamily: 'OpenSans'),
         ),
-        if (ResponsiveBreakpoints.of(context).isDesktop) ...[
+        if (ResponsiveBreakpoints.of(context).isDesktop ||
+            ResponsiveBreakpoints.of(context).isTablet) ...[
           const MenuWidget(),
           const LanguageWidget(),
         ] else ...[

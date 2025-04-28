@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/colors.dart';
 import 'package:portfolio/l10n/l10n.dart';
-import 'package:portfolio/menu_item.dart';
+import 'package:portfolio/l10n/menu_widget.dart';
 
 class NavbarDrawer extends StatefulWidget {
   const NavbarDrawer({super.key});
@@ -40,26 +40,10 @@ class _NavbarDrawerState extends State<NavbarDrawer> {
               color: grey,
               thickness: 0.5,
             ),
-            const SizedBox(height: 50,),
-            MenuItem(
-              text: l10n.about,
-              route: '/',
+            const SizedBox(
+              height: 50,
             ),
-            const SizedBox(height: 30,),
-            const MenuItem(
-              text: 'Projects',
-              route: '/projects',
-            ),
-            const SizedBox(height: 30,),
-            const MenuItem(
-              text: 'Articles',
-              route: '',
-            ),
-            const SizedBox(height: 30,),
-            const MenuItem(
-              text: 'Contacts',
-              route: '',
-            ),
+            const MenuWidget()
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:portfolio/articles_page.dart';
 import 'package:portfolio/colors.dart';
 import 'package:portfolio/global_variables.dart';
 import 'package:portfolio/home_page.dart';
@@ -107,6 +108,14 @@ class MyApp extends StatelessWidget {
               ],
               child: ProjectPage(),
             ),
+        'articles' =>const ResponsiveBreakpoints(
+          breakpoints: [
+            Breakpoint(start: 0, end: 480, name: MOBILE),
+            Breakpoint(start: 481, end: 1200, name: TABLET),
+            Breakpoint(start: 1201, end: double.infinity, name: DESKTOP),
+          ],
+          child: ArticlesPage(),
+        ),
           _ => const SizedBox.shrink(),
         };
       },
