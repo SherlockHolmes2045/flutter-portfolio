@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/article_item.dart';
 import 'package:portfolio/colors.dart';
+import 'package:portfolio/contact_section.dart';
+import 'package:portfolio/contact_social_network_section.dart';
+import 'package:portfolio/contact_title_section.dart';
 import 'package:portfolio/header_widget.dart';
 import 'package:portfolio/l10n/l10n.dart';
 import 'package:portfolio/l10n/menu_widget.dart';
@@ -243,81 +247,7 @@ class ProjectPage extends StatelessWidget {
                               shrinkWrap: true,
                               children: List.generate(
                                 4,
-                                (i) => Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 40,
-                                    vertical: 20,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: grey, width: 0.5),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const Text(
-                                        'The simple example is \n kafka + golang',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'OpenSans',
-                                          fontSize: 15,
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Text(
-                                        'This article presents a simple way to implement a micro service architecture using Kafka, Golang and Docker.',
-                                        style: TextStyle(
-                                          color: grey,
-                                          fontSize: 12,
-                                          fontFamily: 'OpenSans',
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 20,
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Container(
-                                            padding: const EdgeInsets.symmetric(
-                                              horizontal: 40,
-                                              vertical: 7,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color: white,
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                            ),
-                                            child: Text(
-                                              'Read more',
-                                              style: TextStyle(
-                                                color: black,
-                                                fontSize: 12,
-                                                fontFamily: 'OpenSans',
-                                                fontWeight: FontWeight.bold,
-                                                letterSpacing: -0.5,
-                                                fontStyle: FontStyle.italic,
-                                              ),
-                                            ),
-                                          ),
-                                          ElevatedButton(
-                                            onPressed: () {},
-                                            style: ElevatedButton.styleFrom(
-                                              shape: const CircleBorder(),
-                                            ),
-                                            child: Icon(
-                                              Icons.arrow_forward,
-                                              color: black,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                (i) => const ArticleItem(),
                               ),
                             ),
                           ),
@@ -325,185 +255,24 @@ class ProjectPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 32, right: 32, top: 100),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 32, right: 32, top: 100),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Ivan',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineLarge
-                                  ?.copyWith(
-                                    fontSize: 70,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 3,
-                                  ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Row(
-                              children: [
-                                const Text(
-                                  'Software\ndeveloper',
-                                  style: TextStyle(
-                                    fontFamily: 'OpenSans',
-                                    fontSize: 14,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 80,
-                                ),
-                                Text(
-                                  'Lemovou',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headlineLarge
-                                      ?.copyWith(
-                                        fontSize: 70,
-                                        fontWeight: FontWeight.bold,
-                                        letterSpacing: 3,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              '... /Contacts ...',
-                              style: TextStyle(
-                                fontFamily: 'OpenSans',
-                                fontSize: 20,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const MenuWidget(),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: grey, width: 0.5),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              padding: const EdgeInsets.only(
-                                left: 10,
-                                top: 20,
-                                bottom: 20,
-                                right: 200,
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Site',
-                                    style: TextStyle(
-                                      fontFamily: 'OpenSans',
-                                      fontSize: 16,
-                                      color: grey,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
-                                  const Text(
-                                    'Handcrafted by ME /',
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  const Text(
-                                    'Designed by Taisia /',
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  const Text(
-                                    'Powered by Flutter',
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                        ContactTitleSection(),
+                        ContactSection(),
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 50,
-                      left: 32,
-                      right: 32,
-                      bottom: 32,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SocialNetworkWidget(
-                          icon: FaIcon(
-                            FontAwesomeIcons.github,
-                            color: white,
-                            size: 14,
-                          ),
-                          text: 'Github',
-                        ),
-                        SocialNetworkWidget(
-                          icon: FaIcon(
-                            FontAwesomeIcons.linkedinIn,
-                            color: white,
-                            size: 14,
-                          ),
-                          text: 'Linkedin',
-                        ),
-                        SocialNetworkWidget(
-                          icon: Icon(
-                            Icons.email,
-                            color: white,
-                            size: 14,
-                          ),
-                          text: 'E-mail',
-                        ),
-                        SocialNetworkWidget(
-                          icon: FaIcon(
-                            FontAwesomeIcons.telegram,
-                            color: white,
-                            size: 14,
-                          ),
-                          text: 'Telegram',
-                        ),
-                        SocialNetworkWidget(
-                          icon: FaIcon(
-                            FontAwesomeIcons.xTwitter,
-                            color: white,
-                            size: 12,
-                          ),
-                          text: 'Twitter',
-                        ),
-                        SocialNetworkWidget(
-                          icon: FaIcon(
-                            FontAwesomeIcons.stackOverflow,
-                            color: white,
-                            size: 12,
-                          ),
-                          text: 'StackOverflow',
-                        ),
-                      ],
-                    ),
-                  ),
+                  const Padding(
+                      padding: EdgeInsets.only(
+                        top: 50,
+                        left: 32,
+                        right: 32,
+                        bottom: 32,
+                      ),
+                      child: ContactSocialNetworkSection()),
                 ],
               ],
             ),
