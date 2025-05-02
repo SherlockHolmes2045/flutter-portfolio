@@ -6,6 +6,7 @@ import 'package:portfolio/contact_section.dart';
 import 'package:portfolio/contact_social_network_section.dart';
 import 'package:portfolio/contact_title_section.dart';
 import 'package:portfolio/header_widget.dart';
+import 'package:portfolio/keys.dart';
 import 'package:portfolio/l10n/l10n.dart';
 import 'package:portfolio/l10n/menu_widget.dart';
 import 'package:portfolio/navbar_drawer.dart';
@@ -148,6 +149,7 @@ class ProjectPage extends StatelessWidget {
                 ),
                 if (ResponsiveBreakpoints.of(context).isDesktop) ...[
                   Padding(
+                    key: articleSectionKey,
                     padding:
                         const EdgeInsets.only(top: 100, left: 32, right: 32),
                     child: Row(

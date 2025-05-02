@@ -99,7 +99,14 @@ class MyApp extends StatelessWidget {
         final pathName =
             path != '/' && path.startsWith('/') ? path.substring(1) : path;
         return switch (pathName) {
-          '/' => const HomePage(),
+          '/' => const ResponsiveBreakpoints(
+              breakpoints: [
+                Breakpoint(start: 0, end: 480, name: MOBILE),
+                Breakpoint(start: 481, end: 1200, name: TABLET),
+                Breakpoint(start: 1201, end: double.infinity, name: DESKTOP),
+              ],
+              child: HomePage(),
+            ),
           'projects' => const ResponsiveBreakpoints(
               breakpoints: [
                 Breakpoint(start: 0, end: 480, name: MOBILE),
@@ -108,14 +115,31 @@ class MyApp extends StatelessWidget {
               ],
               child: ProjectPage(),
             ),
-        'articles' =>const ResponsiveBreakpoints(
-          breakpoints: [
-            Breakpoint(start: 0, end: 480, name: MOBILE),
-            Breakpoint(start: 481, end: 1200, name: TABLET),
-            Breakpoint(start: 1201, end: double.infinity, name: DESKTOP),
-          ],
-          child: ArticlesPage(),
-        ),
+          'articles' => ResponsiveBreakpoints.of(context).isDesktop
+              ? const ResponsiveBreakpoints(
+                  breakpoints: [
+                    Breakpoint(start: 0, end: 480, name: MOBILE),
+                    Breakpoint(start: 481, end: 1200, name: TABLET),
+                    Breakpoint(
+                      start: 1201,
+                      end: double.infinity,
+                      name: DESKTOP,
+                    ),
+                  ],
+                  child: HomePage(),
+                )
+              : const ResponsiveBreakpoints(
+                  breakpoints: [
+                    Breakpoint(start: 0, end: 480, name: MOBILE),
+                    Breakpoint(start: 481, end: 1200, name: TABLET),
+                    Breakpoint(
+                      start: 1201,
+                      end: double.infinity,
+                      name: DESKTOP,
+                    ),
+                  ],
+                  child: ArticlesPage(),
+                ),
           _ => const SizedBox.shrink(),
         };
       },

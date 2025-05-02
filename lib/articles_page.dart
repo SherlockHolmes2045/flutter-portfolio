@@ -34,7 +34,7 @@ class _ArticlesPageState extends State<ArticlesPage> {
               Positioned(
                 top: MediaQuery.of(context).size.height,
                 right: 0,
-                left: MediaQuery.of(context).size.width,
+                left: MediaQuery.of(context).size.width ,
                 child: CustomPaint(
                   painter: ArcPainter(
                     diameter: 300,

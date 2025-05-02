@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/colors.dart';
+import 'package:portfolio/keys.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class MenuItem extends StatefulWidget {
   const MenuItem({required this.text, required this.route, super.key});
@@ -20,7 +22,14 @@ class _MenuItemState extends State<MenuItem> {
       onEnter: (_) => setState(() => isHovered = true),
       onExit: (_) => setState(() => isHovered = false),
       child: TextButton(
-        onPressed: () => Navigator.of(context).pushNamed(widget.route),
+        onPressed: () {
+          if(widget.route == '/articles' && ResponsiveBreakpoints.of(context).isDesktop){
+            Scrollable.ensureVisible(articleSectionKey.currentContext!);
+          }else{
+            Navigator.of(context).pushNamed(widget.route);
+          }
+        },
+
         style: TextButton.styleFrom(
           foregroundColor:
               isHovered || ModalRoute.of(context)?.settings.name == widget.route
