@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/colors.dart';
 
 class ArcPainter extends CustomPainter {
-  final double diameter; // Diameter of the circle for the arc
-  final double startAngle; // Start angle of the arc in radians
-  final double sweepAngle; // Sweep angle of the arc in radians
+  // Sweep angle of the arc in radians
 
   ArcPainter({
     required this.diameter,
     required this.startAngle,
     required this.sweepAngle,
   });
+  final double diameter; // Diameter of the circle for the arc
+  final double startAngle; // Start angle of the arc in radians
+  final double sweepAngle;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -21,21 +22,16 @@ class ArcPainter extends CustomPainter {
       ..strokeWidth = 0.25; // Adjust the thickness of the arc
 
     // Define the bounding rectangle for the arc
-    final rect = Rect.fromLTRB(
-      size.width - diameter,
+    final rect = Rect.fromLTWH(
+      0,
       // Left (move left by the diameter to create the arc)
-      -diameter / 2,
+      0,
       // Top (negative value moves it slightly outside the visible area)
-      size.width, // Right (top-right corner of the screen)
-      diameter / 2, // Bottom
+      diameter, // Right (top-right corner of the screen)
+      diameter, // Bottom
     );
 
-    // Draw the arc
-    final path = Path()
-      ..arcTo(rect, startAngle, sweepAngle,
-          false); // Use the start and sweep angles
-
-    canvas.drawPath(path, paint);
+    canvas.drawArc(rect, startAngle, sweepAngle, false, paint);
   }
 
   @override

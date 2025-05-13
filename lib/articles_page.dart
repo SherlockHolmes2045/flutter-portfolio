@@ -34,12 +34,15 @@ class _ArticlesPageState extends State<ArticlesPage> {
               Positioned(
                 top: MediaQuery.of(context).size.height,
                 right: 0,
-                left: MediaQuery.of(context).size.width ,
-                child: CustomPaint(
-                  painter: ArcPainter(
-                    diameter: 300,
-                    startAngle: pi / 2,
-                    sweepAngle: pi,
+                child: SizedBox(
+                  width: 300,
+                  height: 300,
+                  child: CustomPaint(
+                    painter: ArcPainter(
+                      diameter: 400,
+                      startAngle: pi,
+                      sweepAngle: pi * 2,
+                    ),
                   ),
                 ),
               ),
